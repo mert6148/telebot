@@ -1,4 +1,4 @@
-"""Serve the PyCompiler Studio frontend and its local package APIs."""
+"""Serve the local web application and Telegram bot control panel."""
 
 from __future__ import annotations
 
@@ -526,6 +526,17 @@ def _request_handler(
 
         def _local_status(self) -> None:
             enabled = self._is_local_request()
+            origin = self.headers.get("Origin")
+            host = self.headers.get("Host", "")
+            if enabled and (
+                (origin and not hmac.compare_digest(origin, f"http://{host}"))
+                or self.headers.get("Sec-Fetch-Site", "").lower() == "cross-site"
+            ):
+                self._send_json(
+                    403,
+                    {"enabled": False, "token": "", "message": "Siteler arası istek reddedildi."},
+                )
+                return
             self._send_json(
                 200,
                 {

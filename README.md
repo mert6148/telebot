@@ -19,6 +19,16 @@ Tokenı kaynak koduna veya paylaşılan dosyalara ekleme. Önceki sürümde toke
 
 Botta `/start` karşılama mesajını, `/vakitler` konum paylaşma düğmesini, `/yardim` komut listesini ve `/iptal` klavyeyi kapatma seçeneğini gösterir. Bot ayrıca Telegram komut menüsünü başlatma sırasında kaydeder; konumlar ve kullanıcı mesajları dosyaya kaydedilmez.
 
+## Yerel web kontrol paneli
+
+`TELEBOT_TOKEN` değişkenini ayarladıktan sonra web panelini başlat:
+
+```powershell
+python main.py --open
+```
+
+Panel bot durumunu gösterir ve botu başlatıp durdurabilir. Varsayılan olarak yalnızca `127.0.0.1` üzerinden dinler; API işlemleri yerel erişim ve oturum anahtarıyla doğrulanır. Mevcut frontend klasörü varsa kontrol paneli `/bot` adresindedir; yoksa panel ana sayfada sunulur.
+
 ## Namaz vakti API protokolü
 
 `prayer_api.py` içindeki `PrayerTimesProvider`, bot ile namaz vakti sağlayıcısı arasındaki Python `Protocol` arayüzüdür. Sağlayıcı, `get_timings(latitude, longitude)` metodundan namaz adı ve saatini eşleyen bir `Mapping[str, str]` döndürür. HTTP katmanı `PrayerTimesHTTPSession` ve `PrayerTimesResponse` protokolleriyle tanımlanmıştır; böylece istemci gerçek `requests` modülüyle veya testlerde sahte bir oturumla kullanılabilir.
