@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "Print Lock Schema",
+    "type": "object",
+    "properties": {
+        "lock": {
+            "type": "boolean",
+            "description": "Indicates whether the print functionality is locked or unlocked."
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp when the lock status was last updated."
+        }
+    }
+}
