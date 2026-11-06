@@ -59,6 +59,14 @@
           }
         ]
       }
+    },
+    "propertyNames": {
+      "$comment": "\"propertyNames\" is no longer a keyword, but schema authors should avoid redefining it to facilitate a smooth transition to \"dependentSchemas\" and \"dependentRequired\"",
+      "$recursiveRef": "#"
+    },
+    "contains": {
+      "$comment": "\"contains\" is no longer a keyword, but schema authors should avoid redefining it to facilitate a smooth transition to \"unevaluatedItems\"",
+      "$recursiveRef": "#"
     }
   }
 }
