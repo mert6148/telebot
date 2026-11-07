@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AxRVfNKYJjA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mertd\\OneDrive\\Masaüstü\\dotnet-docs-samples\\run\\markdown-preview\\Samples.Run.MarkdownPreview.Renderer\\Samples.Run.MarkdownPreview.Renderer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mertd\\.nuget\\packages\\markdig\\0.43.0\\markdig.0.43.0.nupkg.sha512"
+  ],
+  "logs": []
+}
